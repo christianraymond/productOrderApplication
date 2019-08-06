@@ -19,7 +19,10 @@ namespace ProductOrderApplication
         protected void Page_Load(object sender, EventArgs e)
         {
         }
- 
+        //Comment this code because The database is not being initialized, I am getting the following error that I have tried to replicate but the error still persisting
+        //A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.
+
+
         /*public IQueryable<ProductList> GetProducts([QueryString("productID")] int? categoryId)
         {
             var _db = new ProductOrderApplication.Models.ProductCategoryContext();
@@ -34,46 +37,12 @@ namespace ProductOrderApplication
             }
             return query;
         }*/
+
+      //Because of the Database bug, maybe makeing a manual loop to this list of product can be great to avoid hard coding the code list.
         public static List<ListOfProducts> GetProducts()
         {
             var products = new List<ListOfProducts> {
-                 new ListOfProducts
-                 {
-                     ProductID = 1,
-                     ProductName = "Convertible Car",
-                     Description = "This convertible car is fast! The engine is powered by a neutrino based battery (not included)." +
-                                   "Power it up and let it go!",
-                     ImagePath="carconvert.png",
-                     UnitPrice = 22.50,
-                     CategoryID = 1
-                },
-                 new ListOfProducts
-                 {
-                     ProductID = 2,
-                     ProductName = "Old-time Car",
-                     Description = "There's nothing old about this toy car, except it's looks. Compatible with other old toy cars.",
-                     ImagePath="carearly.png",
-                     UnitPrice = 15.95,
-                     CategoryID = 1
-                },
-                 new ListOfProducts
-                 {
-                     ProductID = 3,
-                     ProductName = "Fast Car",
-                     Description = "Yes this car is fast, but it also floats in water.",
-                     ImagePath="carfast.png",
-                     UnitPrice = 32.99,
-                     CategoryID = 1
-                 },
-                 new ListOfProducts
-                 {
-                     ProductID = 4,
-                     ProductName = "Super Fast Car",
-                     Description = "Use this super fast car to entertain guests. Lights and doors work!",
-                     ImagePath="carfaster.png",
-                     UnitPrice = 8.95,
-                     CategoryID = 1
-                 },
+                
                  new ListOfProducts
                  {
                      ProductID = 5,

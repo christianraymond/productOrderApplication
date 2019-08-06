@@ -17,6 +17,7 @@ namespace ProductOrderApplication.Models
         }
         public DbSet<CategoryOfProducts> CategoryOfProducts { get; set; }
         public DbSet<ListOfProducts> ListOfProducts { get; set; }
+        public DbSet<CartItem> ShoppingCartItems { get; set; }
         public IQueryable<ProductList> Products { get; internal set; }
     }
 }

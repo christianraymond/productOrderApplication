@@ -19,6 +19,7 @@ namespace ProductOrderApplication
         {
             message.Text = "Hello " + username.Text + " ! ";
             message.Text = message.Text + " <br/> You have successfuly Registered with the following details.";
+            ShowUserName.Text = username.Text;
             ShowSurname.Text = surname.Text;
             if (RadioButton1.Checked)
             {
@@ -35,15 +36,22 @@ namespace ProductOrderApplication
                 address += CheckBox2.Text + " ";
             }
             ShowCity.Text = address;
-            ShowUserNameLabel.Text = "First Name";
-            ShowSurnameLabel.Text = "Surname";
-            ShowResidentialLabel.Text = "Address type";
-            ShowCityLabel.Text = "Area type";
-            username.Text = "";
+            ShowUserNameLabel.Text = "Name:";
+            ShowSurnameLabel.Text = "Surname:";
+            ShowResidentialLabel.Text = "Address:";
+            ShowCityLabel.Text = "Area type:";
+           
             RadioButton1.Checked = false;
             RadioButton2.Checked = false;
             CheckBox1.Checked = false;
             CheckBox2.Checked = false;                
+        }
+
+        //Trying to clear out the form when Register button is clicked.
+        protected void Reset_Click(object sender, EventArgs e)
+        {
+            username.Text = string.Empty;
+            surname.Text = string.Empty;
         }
     }
 }

@@ -35,23 +35,30 @@ namespace ProductOrderApplication
         //Adding data control to display product
         //Using Coding by hand Bind Data
 
-        public static List<ListOfProducts> GetSingleProduct()
+        public static ListOfProducts GetSingleProduct()
         {
             var products = new List<ListOfProducts> {
 
-                 new ListOfProducts
-                 {
-                     ProductID = 6,
-                     ProductName = "Ace Plane",
-                     Description = "Authentic airplane toy. Features realistic color and details.",
-                     ImagePath="planeace.png",
-                     UnitPrice = 95.00,
-                     CategoryID = 2
-                 },
-             };
-
-            return products;
+                new ListOfProducts
+                {
+                    ProductID = 6,
+                    ProductName = "Ace Plane",
+                    Description = "Authentic airplane toy. Features realistic color and details.",
+                    ImagePath = "planeace.png",
+                    UnitPrice = 95.00,
+                    CategoryID = 2
+                }
+            };
+                foreach (var item in products)
+            {
+                if (item.ProductID > 0)
+                {
+                    return item;
+                }
+             }
+            return new ListOfProducts();
         }
+      
     }
-
 }
+
