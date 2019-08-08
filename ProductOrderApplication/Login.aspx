@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProductOrderApplication.Login" %>
-<!DOCTYPE html>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ProductOrderApplication.Login" %>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-   <title></title>
-</head>
-<body style="font-family: Arial, Helvetica, sans-serif; font-size: small">
-   <form id="form1" runat="server">
-      <div>
-         <h4 style="font-size: medium">Log In</h4>
+<h4 style="font-size: medium">Log In</h4>
          <hr />
          <asp:PlaceHolder runat="server" ID="LoginStatus" Visible="false">
             <p>
@@ -17,7 +10,7 @@
          </asp:PlaceHolder>
          <asp:PlaceHolder runat="server" ID="LoginForm" Visible="false">
             <div style="margin-bottom: 10px">
-               <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+               <asp:Label runat="server" AssociatedControlID="UserName">First name</asp:Label>
                <div>
                   <asp:TextBox runat="server" ID="UserName" />
                </div>
@@ -30,18 +23,15 @@
             </div>
             <div style="margin-bottom: 10px">
                <div>
-                  <asp:Button runat="server" OnClick="SignIn" Text="Log in" />
+                  <asp:Button runat="server" CssClass="btn btn-secondary" OnClick="SignIn" Text="Log in" />
                </div>
             </div>
          </asp:PlaceHolder>
          <asp:PlaceHolder runat="server" ID="LogoutButton" Visible="false">
             <div>
                <div>
-                  <asp:Button runat="server" OnClick="SignOut" Text="Log out" />
+                  <asp:Button runat="server"  CssClass="btn btn-primary" OnClick="SignOut" Text="Log out" />
                </div>
             </div>
          </asp:PlaceHolder>
-      </div>
-   </form>
-</body>
-</html>
+    </asp:Content>

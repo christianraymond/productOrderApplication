@@ -2,15 +2,18 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace ProductOrderApplication
 {
-    public partial class Login : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class Login : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
             if (!IsPostBack)
             {
                 if (User.Identity.IsAuthenticated)
@@ -38,7 +41,7 @@ namespace ProductOrderApplication
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-                Response.Redirect("~/ProductList.aspx");
+                Response.Redirect("~/Login.aspx");
             }
             else
             {
@@ -51,7 +54,7 @@ namespace ProductOrderApplication
         {
             var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
             authenticationManager.SignOut();
-            Response.Redirect("~/ProductList.aspx");
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

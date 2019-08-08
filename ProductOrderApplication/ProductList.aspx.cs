@@ -21,8 +21,6 @@ namespace ProductOrderApplication
         }
         //Comment this code because The database is not being initialized, I am getting the following error that I have tried to replicate but the error still persisting
         //A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.
-
-
         /*public IQueryable<ProductList> GetProducts([QueryString("productID")] int? categoryId)
         {
             var _db = new ProductOrderApplication.Models.ProductCategoryContext();
@@ -38,11 +36,11 @@ namespace ProductOrderApplication
             return query;
         }*/
 
-      //Because of the Database bug, maybe makeing a manual loop to this list of product can be great to avoid hard coding the code list.
+        //Because of the Database bug, maybe makeing a manual loop to this list of product can be great to avoid hard coding the code list.
         public static List<ListOfProducts> GetProducts()
         {
             var products = new List<ListOfProducts> {
-                
+
                  new ListOfProducts
                  {
                      ProductID = 5,

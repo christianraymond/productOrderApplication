@@ -56,7 +56,6 @@ C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\EntityFramework
 C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\EntityFramework.SqlServer.dll
 C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\Microsoft.AspNet.Identity.Core.dll
-C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\workspace\ProductOrderApplication\ProductOrderApplication\bin\Microsoft.ScriptManager.MSAjax.dll

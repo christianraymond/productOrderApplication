@@ -8,6 +8,7 @@ namespace ProductOrderApplication.Models
 {
     public class ListOfProducts
     {
+        [Key]
         [ScaffoldColumn(false)]
         public int ProductID { get; set; }
         [Required, StringLength(100), Display(Name = "Name")]

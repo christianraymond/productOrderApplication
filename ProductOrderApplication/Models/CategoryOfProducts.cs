@@ -8,7 +8,7 @@ namespace ProductOrderApplication.Models
 {
     public class CategoryOfProducts
     {
-        [ScaffoldColumn(false)]
+        [Key]
         public int CategoryID { get; set; }
         [Required, StringLength(100), Display(Name = "Name")]
         public string CategoryName { get; set; }
