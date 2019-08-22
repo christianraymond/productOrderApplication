@@ -3,16 +3,15 @@ using System.Data.Entity;
 
 namespace ProductOrderApplication.Models
 {
-    public class ProductDatabaseInitializer : DropCreateDatabaseAlways<ProductCategoryContext>
+    public class ProductDatabaseInitializer //: DropCreateDatabaseAlways<ProductCategoryContext>
     {
         public int? CategoryID { get; internal set; }
 
-        protected override void Seed(ProductCategoryContext context)
+        protected void Seed(ProductCategoryContext context)
         {
-            base.Seed(context);
 
             GetCategories().ForEach(c => context.CategoryOfProducts.Add(c));
-            GetProducts().ForEach(p => context.ListOfProducts.Add(p));
+            GetProducts().ForEach(async p => (await context.Products.ToListAsync()).Add(p));
         }
         private static List<CategoryOfProducts> GetCategories()
         {

@@ -20,7 +20,7 @@ namespace ProductOrderApplication
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             // Initialize the products database.
-            Database.SetInitializer(new ProductDatabaseInitializer());
+            //Database.SetInitializer(new IDatabaseInitializer<ProductCategoryContext>());
 
             // Add Routes.
             RegisterCustomRoutes(RouteTable.Routes);

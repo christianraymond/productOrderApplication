@@ -15,12 +15,10 @@ namespace ProductOrderApplication
         {
         }
         //Using Model binding to Bind Data from the database. But databaseInitializer is not sending the data to the database, still replicationg the cause.
-
-        public IQueryable<ProductList> GetProduct([QueryString("productID")] int?
-       productId)
+        public IQueryable<ListOfProducts> GetSingleProduct([QueryString("productID")] int? productId)
         {
             var _db = new ProductOrderApplication.Models.ProductCategoryContext();
-            IQueryable<ProductList> query = _db.Products;
+            IQueryable<ListOfProducts> query = _db.Products;
             if (productId.HasValue && productId > 0)
             {
                 query = query.Where(p => p.ProductID == productId);
@@ -31,34 +29,6 @@ namespace ProductOrderApplication
             }
             return query;
         }
-
-        //Adding data control to display product
-        //Using Coding by hand Bind Data
-
-        public static ListOfProducts GetSingleProduct()
-        {
-            var products = new List<ListOfProducts> {
-
-                new ListOfProducts
-                {
-                    ProductID = 6,
-                    ProductName = "Ace Plane",
-                    Description = "Authentic airplane toy. Features realistic color and details.",
-                    ImagePath = "planeace.png",
-                    UnitPrice = 95.00,
-                    CategoryID = 2
-                }
-            };
-                foreach (var item in products)
-            {
-                if (item.ProductID > 0)
-                {
-                    return item;
-                }
-             }
-            return new ListOfProducts();
-        }
-      
     }
 }
 

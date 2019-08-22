@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
-using ProductOrderApplication.Register;
+using ProductOrderApplication.Register;
+
 
 namespace ProductOrderApplication
 {
     public partial class AddToCart : System.Web.UI.Page
     {
+        public string ProductId { get; private set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string rawId = Request.QueryString["ProductID"];
@@ -24,6 +27,12 @@ namespace ProductOrderApplication
                 }
             }
             else
+            {
+                Debug.Fail("ERROR : We should never get to AddToCart.aspx without a" +
+               ProductId + ".");
+               
+                throw new Exception("ERROR : It is illegal to load AddToCart.aspx without setting a ProductId.");
+            }
             Response.Redirect("ShoppingCart.aspx");
         }
     }

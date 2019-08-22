@@ -15,11 +15,8 @@ namespace ProductOrderApplication.Register
         {
             // Retrieve the product from the database.
             ShoppingCartId = GetCartId();
-            //I am getting the following error from line 19 "//A network-related or instance-specific error occurred while establishing a connection to SQL Server.
-            //The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.
-            var cartItem = _db.ShoppingCartItems.SingleOrDefault(
-            c => c.CartId == ShoppingCartId
-            && c.ProductId == id);
+            var cartItem = _db.ShoppingCartItems.SingleOrDefault(c => c.CartId == ShoppingCartId && c.ProductId == id);
+
             if (cartItem == null)
             {
                 // Create a new cart item if no cart item exists.
@@ -28,7 +25,7 @@ namespace ProductOrderApplication.Register
                     ItemId = Guid.NewGuid().ToString(),
                     ProductId = id,
                     CartId = ShoppingCartId,
-                    Product = _db.ListOfProducts.SingleOrDefault(p => p.ProductID == id),
+                    Product = _db.Products.SingleOrDefault(p => p.ProductID == id),
                     Quantity = 1,
                     DateCreated = DateTime.Now
                 };

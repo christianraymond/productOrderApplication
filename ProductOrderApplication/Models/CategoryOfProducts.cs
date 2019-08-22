@@ -14,6 +14,6 @@ namespace ProductOrderApplication.Models
         public string CategoryName { get; set; }
         [Display(Name = "Product Description")]
         public string Description { get; set; }
-        public virtual ICollection<ProductCategoryContext> Products { get; set; }
-    }
+/*        public virtual ListOfProducts Products { get; set; }
+*/    }
 }

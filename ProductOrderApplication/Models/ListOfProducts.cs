@@ -8,9 +8,8 @@ namespace ProductOrderApplication.Models
 {
     public class ListOfProducts
     {
-        [Key]
         [ScaffoldColumn(false)]
-        public int ProductID { get; set; }
+      [Key] public int ProductID { get; set; }
         [Required, StringLength(100), Display(Name = "Name")]
         public string ProductName { get; set; }
         [Required, StringLength(10000), Display(Name = "Product Description"),
@@ -21,5 +20,6 @@ namespace ProductOrderApplication.Models
         public double? UnitPrice { get; set; }
         public int? CategoryID { get; set; }
         public virtual CategoryOfProducts Category { get; set; }
+
     }
 }

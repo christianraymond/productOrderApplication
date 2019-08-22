@@ -57,10 +57,7 @@
             </div>
         </div>
         <div id="CategoryMenu" style="text-align: center">       
-            <asp:ListView ID="categoryList"  
-                ItemType="ProductOrderApplication.Models.CategoryOfProducts" 
-                runat="server"
-                SelectMethod="GetCategories">
+            <asp:ListView ID="categoryList" ItemType="ProductOrderApplication.Models.CategoryOfProducts" runat="server" SelectMethod="GetCategories">
                 <ItemTemplate>
                     <b style="font-size: large; font-style: normal">
                     <a href="<%#: GetRouteUrl("ProductsByCategoryRoute", new {categoryName = Item.CategoryName}) %>">
